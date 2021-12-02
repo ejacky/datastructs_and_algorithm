@@ -4,11 +4,11 @@
 #define MAX         100
 
 // 边
-typedef struct _ENode {
+typedef struct eNode {
     /* data */
     int weight;   // 权值
     int iv;       // 指向顶点
-    struct _ENode *next;
+    struct eNode *next;
 } ENode;
 
 // 顶点
@@ -21,7 +21,7 @@ typedef struct _VNode {
 
 
 // 邻接表
-typedef struct _LGraph {
+typedef struct lGraph {
     int vexnum;
     int edgenum;
     VNode vex[MAX];
@@ -53,7 +53,8 @@ void DFSTraverse(LGraph graph) {
 
 }
 
-static DFS(LGraph graph, int i, int *visited) {
+// 深度优先递归遍历
+void DFS(LGraph graph, int i, int *visited) {
 
     visited[i] = 1;
     printf("%c", graph.vex[i].data);
@@ -69,12 +70,12 @@ static DFS(LGraph graph, int i, int *visited) {
 }
 
 // 非递归深度遍历， 利用栈
-static DFS1(LGraph graph, int i, int *visited) {
+void DFSNoRecur(LGraph graph, int i, int *visited) {
     int S[MAX];
 
     PushStack(S, i);
 
-    while (!SIsEmpty(S)) {
+    while (!EmptyStack(S)) {
 
         PopStack(S, i);
         printf("%c", graph.vex[i].data);
@@ -107,6 +108,7 @@ void BFSTraverse(LGraph graph) {
 
 }
 
+// 广度优先非递归遍历, 利用队列
 static BFS(LGraph graph, int u, int *visited) {
    
     int Q[MAX];
@@ -114,7 +116,7 @@ static BFS(LGraph graph, int u, int *visited) {
     visited[u] = 1;
     EnQueue(Q, u);
 
-    while (!QIsEmpty(Q)) {
+    while (!EmptyQueue(Q)) {
 
         int j;
         DeDueue(Q, j);
@@ -138,11 +140,11 @@ void EnQueue(int *Q, int i) {
 
 }
 
-void DeDueue(int *Q, int j) {
+void DeQueue(int *Q, int j) {
 
 }
 
-int QIsEmpty(int *Q)  {
+int EmptyQueue(int *Q)  {
     return 0;
 }
 
@@ -155,6 +157,11 @@ void PopStack(int *S, int j) {
 
 }
 
-int SIsEmpty(int *S)  {
+int EmptyStack(int *S)  {
     return 0;
 }
+
+//todo 有向图的入度
+//todo 图中 u 到 v 是否有路径
+//todo 图中找到 u 到 v 的一条路径
+
