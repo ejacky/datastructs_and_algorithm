@@ -32,3 +32,25 @@ void HeapSort(ELemType A[], int len) {
         HeadAdjust(A, 1, n-1);
     }
 }
+
+// 折半查找
+int BinSearch(int *arr, int key) {
+    int min;
+    int low = 0, high = len(arr);
+    while (low <= high) {
+        min = (high - low) / 2;
+        if (key == arr[min]) {
+            return min
+        }
+        if (key < arr[min]) {
+            high = min - 1;
+        }
+        if (key > arr[min]) {
+            low = min + 1;
+        }
+    }
+
+    return -1;
+}
+
+// 快排
