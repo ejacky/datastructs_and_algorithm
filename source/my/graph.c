@@ -62,7 +62,7 @@ void DFS(LGraph graph, int i, int *visited) {
     ENode *node = graph.vex[i].first_edge;
     while (node != NULL) {
         if (!visited[node->iv]) {
-            DFS(graph, node->next, visited);
+            DFS(graph, node->iv, visited);
         }
 
         node = node->next;

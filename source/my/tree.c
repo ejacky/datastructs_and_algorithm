@@ -53,8 +53,6 @@ void DestroyTree(BiTNode *b) {
     }
 }
 
-//todo 根节点到某一节点的路径
-
 // 求深度
 int Depth(BiTNode *b) {
     int m,n;
@@ -139,4 +137,7 @@ void InOrderNoRecur(BiTree root) {
         }
     }
 }
+
+//todo 根节点到某一节点的路径
+//todo 求树的各个节点的平衡因子
 
