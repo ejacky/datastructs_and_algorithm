@@ -134,6 +134,29 @@ static BFS(LGraph graph, int u, int *visited) {
     }
 }
 
+//BFS算法求解单源最短路径问题
+void BFS_MIN_Distance(Graph G,int u)
+{
+    for(int i=0;i<G.vexnum;i++)
+        d[i]=INT_MAX;
+    visited[u]=true;
+    d[u]=0;
+    EnQueue(Q,u);
+    while(!IsEmpty(Q))
+    {
+        DeQueue(Q,u);
+        for(w=FirstNeighbor(G,u);w>=0;w=NextNeighbor(G,u,w))
+        {
+            if(!visited[w])
+            {
+                visited[w]=true;
+                d[w]=d[u]+1;
+                EnQueue(Q,w);
+            }
+        }
+    }
+}
+
 
 // 队列
 void EnQueue(int *Q, int i) {
@@ -163,5 +186,9 @@ int EmptyStack(int *S)  {
 
 //todo 有向图的入度
 //todo 图中 u 到 v 是否有路径
-//todo 图中找到 u 到 v 的一条路径
+//todo 图中找到 u 到 v 的一条最短路径
+
+//todo DFS 是否有环, 需记录父结点并判断当前结点的父节点是否正确
+//https://www.cnblogs.com/dotdashdotdash/p/11863579.html
+//https://blog.csdn.net/zhougb3/article/details/80007593
 

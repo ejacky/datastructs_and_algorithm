@@ -16,7 +16,7 @@ int main() {
 
 }
 
-
+// 计算每个结点的平衡因子
 int FactorDepthMake(BiTree *tree) {
     if (tree != NULL) {
         int m = n = 0;
@@ -139,5 +139,9 @@ void InOrderNoRecur(BiTree root) {
 }
 
 //todo 根节点到某一节点的路径
-//todo 求树的各个节点的平衡因子
+
+//递归的三大要素 https://blog.csdn.net/dreamispossible/article/details/90552557
+// 1 理解函数意义
+// 2 寻找递归返回条件
+// 3 找出等价关系
 

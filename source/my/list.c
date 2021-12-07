@@ -34,5 +34,16 @@ ElemType MaxElem(LNode *n) {
     }
 }
 
-//todo 反转链表
+// 反转链表
+struct LNode* ReverseList(LNode* head) {
+    LNode* pre = NULL;
+    LNode* cur = head;
+    while (cur) {
+        LNode* next = cur->next;
+        cur->next = pre;
+        pre = cur;
+        cur = next;
+    }
+    return pre;
+}
 
