@@ -6,7 +6,7 @@ typedef struct lnode {
 }LNode, *LinkList;
 
 // 链表删除指定元素
-void delElem(LNode *n, ElemType x) {
+void DelElem(LNode *n, ElemType x) {
     LNode *p;
     if (n == NULL) {
         return;
@@ -15,9 +15,9 @@ void delElem(LNode *n, ElemType x) {
         p = n;
         n = n->next;
         free(p);
-        delElem(n, x);
+        DelElem(n, x);
     } else {
-        delElem(n->next, x);
+        DelElem(n->next, x);
     }
 }
 

@@ -28,6 +28,14 @@ typedef struct lGraph {
 
 } LGraph;
 
+// 邻接矩阵
+typedef struct mGraph {
+    int vexnum;
+    int edgenum;
+    char vex[MAX];
+    int  edge[MAX][MAX];
+} MGraph;
+
 int main() {
 
 
