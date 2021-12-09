@@ -127,7 +127,7 @@ static BFS(LGraph graph, int u, int *visited) {
     while (!EmptyQueue(Q)) {
 
         int j;
-        DeDueue(Q, j);
+        DeQueue(Q, j);
 
         ENode *node = graph.vex[j].first_edge;
         
@@ -162,6 +162,53 @@ void BFS_MIN_Distance(Graph G,int u)
                 EnQueue(Q,w);
             }
         }
+    }
+}
+
+
+// 拓扑排序
+// https://www.cnblogs.com/A-FM/p/9688149.html#%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F
+void toPo() {
+    for (every vertex) {
+        if InDegree(i) == 0 {
+            Enqueue(Q, i);
+        }
+    }
+
+    while (!IsEmpty(Q)) {
+        DeQueue(Q, j);
+        Cnt++;
+        for (every neighbor) {
+            --Degree(neighbor)
+            if InDegree(neighbor) == 0 {
+                EnQueue(Q, neighbor)
+            }
+        }
+    }
+
+    if (cnt < |v|) {
+        "have circle"
+    }
+
+
+
+
+}
+
+// 迪杰斯特拉
+// https://blog.csdn.net/shengdaVolleyball/article/details/106597532
+void Dijkstra(MGraph G, int vs, int prev[], int dist[]) {
+    for(every vertex) {
+        // 两点最短路径
+        for () {
+
+        }
+
+        // 更新dist
+        for () {
+
+        }
+
     }
 }
 

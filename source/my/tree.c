@@ -138,7 +138,47 @@ void InOrderNoRecur(BiTree root) {
     }
 }
 
+// 层次遍历
+void LevelOrder(BiTree root) {
+    InitQueue(Q);
+    BiTNode *p;
+    EnQueue(Q, root);
+    while (!EmptyQueue(Q)) {
+        DeQueue(Q, p);
+        printf("%d", p->data);
+        if (p->lChild != NULL) {
+            EnQueue(Q, p->lChild);
+        }
+        if (p->rChild != NULL) {
+            EnQueue(Q, p->rChild);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //todo 根节点到某一节点的路径
+//todo 判断是否为平衡二叉树
 
 //递归的三大要素 https://blog.csdn.net/dreamispossible/article/details/90552557
 // 1 理解函数意义
